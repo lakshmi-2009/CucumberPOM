@@ -62,7 +62,7 @@ public class LoginPage extends BasePage {
 	}
 	
 	public void rememberMeCheckbox() {
-		clickOnElement(rememberCheckBox);
+		clickOnButton(rememberCheckBox, "rememberCheckBox");
 		System.out.println("rememberCheckBox is clicked");
 	}
 	

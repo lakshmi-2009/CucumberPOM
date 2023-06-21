@@ -11,14 +11,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.automation.utility.ExtentReportsUtility;
+
 import com.automation.utility.Log4JUtility;
 
 public class BasePage {
 	protected  static WebDriver driver;
 	protected  WebDriverWait wait;
 	protected Logger log;
-	protected ExtentReportsUtility report = ExtentReportsUtility.getInstance();
+	
 	protected Log4JUtility logObject = Log4JUtility.getInstance();
 	
 	public BasePage(WebDriver driver) {
@@ -91,19 +91,20 @@ public class BasePage {
 		}
 	
 	
-	public void clickOnElement(WebElement element) {
-		elementToBeClickable(element);
-		element.click();	
+	public void clickOnButton(WebElement element, String object) {
+		//WaitUntilElementVisible(element, object);
+		element.click();
+		//log.info(element+" is clicked");
 	}
 	
 	public void enterText(WebElement element,String text) {
 		element.sendKeys(text);
 	}
 	
-	public void clickOn(WebElement element) {
+	/*public void clickOn(WebElement element) {
 		String s = element.getText();
 		System.out.println("  *******from base page");	
-	}
+	}*/
 	
 
 	public  String getPageTitle() {
@@ -111,8 +112,9 @@ public class BasePage {
 		return driver.getTitle();	
 	}
 
-	public void WaitUntilElementVisible(WebElement ele){	
-		WebDriverWait wait = new WebDriverWait(driver,30);
+	public void WaitUntilElementVisible(WebElement ele, String objName){	
+		System.out.println("wait until element"+objName +"visible");
+		WebDriverWait wait = new WebDriverWait(driver,60);
 	    wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 	

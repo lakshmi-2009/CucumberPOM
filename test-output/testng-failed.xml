@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.tests.automationScripts">
+      <class name="com.automation.runners.SalesforceRunner">
         <methods>
-          <include name="TC_3_Home_page"/>
-          <include name="BeforeTest"/>
-          <include name="BeforeMethod"/>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- com.automation.tests.automationScripts -->
+      </class> <!-- com.automation.runners.SalesforceRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
